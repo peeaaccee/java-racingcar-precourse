@@ -35,4 +35,19 @@ public class Car {
         }
     }
 
+    public void currentPosition(StringBuilder positions) {
+        positions.append(name);
+        positions.append(COLON);
+        positions.append(convertPosition());
+        positions.append(ENTER_LINE);
+    }
+
+    private StringBuilder convertPosition() {
+        StringBuilder position = new StringBuilder();
+        for (int i = 0; i < this.position; i++) {
+            position.append(DASH);
+        }
+        return position;
+    }
+
 }
