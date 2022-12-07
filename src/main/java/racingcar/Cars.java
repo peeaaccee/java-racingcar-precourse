@@ -63,4 +63,13 @@ public class Cars {
         }
         return positions;
     }
+
+    public ArrayList<String> awardWinners() {
+        ArrayList<String> winners = new ArrayList<>();
+        int max_distance = INIT_ZERO;
+        for (Car car : cars) {
+            max_distance = car.award(winners, max_distance);
+        }
+        return winners;
+    }
 }
