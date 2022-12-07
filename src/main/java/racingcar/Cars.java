@@ -25,4 +25,24 @@ public class Cars {
     public static Cars newCars(String carNames) {
         return new Cars(carNames);
     }
+
+    private void validateEmpty(String carNames) {
+        if (carNames.replaceAll(WHITE_SPACE, NO_STRING).length() == EMPTY) {
+            throw new IllegalArgumentException("자동차 이름을 입력해주세요.");
+        }
+    }
+
+    private void validateCommaCount(String carNames) {
+        if (carNames.charAt(carNames.length() - 1) == CHAR_COMMA) {
+            throw new IllegalArgumentException("자동차 이름이 충분히 입력되지 않았습니다.");
+        }
+    }
+
+    private void validateDuplicate(String carNames) {
+        ArrayList<String> listCarNames = new ArrayList<>(Arrays.asList(carNames.split(COMMA)));
+        Set<String> setCarNames = new HashSet<>(Arrays.asList(carNames.split(COMMA)));
+        if (listCarNames.size() != setCarNames.size()) {
+            throw new IllegalArgumentException("중복된 이름은 안됩니다.");
+        }
+    }
 }
