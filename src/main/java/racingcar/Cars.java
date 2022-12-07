@@ -1,6 +1,7 @@
 package racingcar;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,5 +45,13 @@ public class Cars {
         if (listCarNames.size() != setCarNames.size()) {
             throw new IllegalArgumentException("중복된 이름은 안됩니다.");
         }
+    }
+
+    private ArrayList<Car> enrollCars(String carNames) {
+        ArrayList<Car> cars = new ArrayList<>();
+        for (String carName : carNames.split(COMMA)) {
+            cars.add(Car.newCar(carName));
+        }
+        return cars;
     }
 }
