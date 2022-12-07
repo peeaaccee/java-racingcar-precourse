@@ -14,11 +14,13 @@ public class Car {
 
     private final String name;
     private int position = 0;
+    private final GasTank gasTank;
 
     public Car(String name) {
         validateEmpty(name);
         validateLength(name);
         this.name = name;
+        this.gasTank = GasTank.randomChargeGasTank();
     }
 
     public static Car newCar(String name) {
@@ -37,11 +39,18 @@ public class Car {
         }
     }
 
+    public void tryForward() {
+        if (gasTank.isEnoughGas()) {
+            position++;
+        }
+    }
+
     public void currentPosition(StringBuilder positions) {
         positions.append(name);
         positions.append(COLON);
         positions.append(convertPosition());
         positions.append(ENTER_LINE);
+        this.gasTank = GasTank.randomChargeGasTank();
     }
 
     private StringBuilder convertPosition() {
