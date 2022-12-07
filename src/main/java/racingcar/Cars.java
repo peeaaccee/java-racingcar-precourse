@@ -54,4 +54,13 @@ public class Cars {
         }
         return cars;
     }
+
+    public StringBuilder continueRacing() {
+        StringBuilder positions = new StringBuilder();
+        for (Car car : cars) {
+            car.tryForward();
+            car.currentPosition(positions);
+        }
+        return positions;
+    }
 }
