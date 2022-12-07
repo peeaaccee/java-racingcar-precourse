@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.ArrayList;
+
 public class Car {
 
     private static final String ENTER_LINE = "\n";
@@ -48,6 +50,17 @@ public class Car {
             position.append(DASH);
         }
         return position;
+    }
+
+    public int award(ArrayList<String> winners, int max_distance) {
+        if (max_distance < position) {
+            winners.clear();
+            max_distance = position;
+        }
+        if (max_distance == position) {
+            winners.add(name);
+        }
+        return max_distance;
     }
 
 }
