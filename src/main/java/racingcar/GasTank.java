@@ -1,4 +1,5 @@
 package racingcar;
+import utils.RandomUtils;
 
 public class GasTank {
 
@@ -9,4 +10,11 @@ public class GasTank {
     private GasTank() {
     }
 
+    public static GasTank randomChargeGasTank() {
+        return new GasTank();
+    }
+
+    public boolean isEnoughGas() {
+        return RandomUtils.nextInt(MIN_GAS, MAX_GAS) >= ENOUGH_GAS;
+    }
 }
