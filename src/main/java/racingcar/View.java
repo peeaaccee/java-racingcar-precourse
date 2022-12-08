@@ -11,4 +11,15 @@ public class View {
     private View() {
     }
 
+    public static void printPleaseInputCars() {
+        System.out.println(PLEASE_INPUT_CAR_NAMES);
+    }
+
+    public static void printPleaseInputLap() {
+        System.out.println(PLEASE_INPUT_LOOP_TIME);
+    }
+
+    public static void printStartRacing() {
+        System.out.println(START_RACING);
+    }
 }
