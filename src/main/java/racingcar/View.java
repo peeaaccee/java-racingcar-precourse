@@ -22,4 +22,8 @@ public class View {
     public static void printStartRacing() {
         System.out.println(START_RACING);
     }
+
+    public static void printRacing(StringBuilder stringBuilder) {
+        System.out.println(stringBuilder);
+    }
 }
