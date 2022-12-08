@@ -50,7 +50,6 @@ public class Car {
         positions.append(COLON);
         positions.append(convertPosition());
         positions.append(ENTER_LINE);
-        this.gasTank = GasTank.randomChargeGasTank();
     }
 
     private StringBuilder convertPosition() {
