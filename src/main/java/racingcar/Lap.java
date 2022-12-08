@@ -11,4 +11,23 @@ public class Lap {
         validateOverZero(validateLap);
         this.lap = validateLap;
     }
+
+    public static Lap newLap(String lap) {
+        return new Lap(lap);
+    }
+
+    private int validateInteger(String lap) {
+        try {
+            return Integer.parseInt(lap);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("시도 횟수는 숫자여야 합니다.");
+        }
+    }
+
+    private void validateOverZero(int lap) {
+        if (lap <= ZERO) {
+            throw new IllegalArgumentException("시도 횟수는 1 이상이어야 합니다.");
+        }
+    }
+    
 }
