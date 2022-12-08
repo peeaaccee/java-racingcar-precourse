@@ -26,4 +26,8 @@ public class View {
     public static void printRacing(StringBuilder stringBuilder) {
         System.out.println(stringBuilder);
     }
+
+    public static void printError(String message) {
+        System.out.println(ERROR + message);
+    }
 }
