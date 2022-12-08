@@ -1,5 +1,7 @@
 package racingcar;
 
+import java.util.ArrayList;
+
 public class View {
     private static final String PLEASE_INPUT_CAR_NAMES = "경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)";
     private static final String PLEASE_INPUT_LOOP_TIME = "시도할 회수는 몇회인가요?";
@@ -21,6 +23,10 @@ public class View {
 
     public static void printStartRacing() {
         System.out.println(START_RACING);
+    }
+
+    public static void printWinners(ArrayList<String> winners) {
+        System.out.println(WINNER + String.join(JOIN_COMMA, winners));
     }
 
     public static void printRacing(StringBuilder stringBuilder) {
